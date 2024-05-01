@@ -8,3 +8,23 @@ body {
     width: 100vw;
     height: 100vh;
 }
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0px;
+    
+    &__indicators {
+        display: flex;
+        gap: 50px;
+    }
+
+    &__indicators-element {
+        font-size: 18px;
+    }
+}
+.record-indicator {
+}
+.progress-indicator {
+}
