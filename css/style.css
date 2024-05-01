@@ -22,3 +22,42 @@ body {
 .header__indicators-element {
   font-size: 18px;
 }
+
+.main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 80px;
+  padding: 70px 0px;
+}
+.main__title {
+  font-size: 40px;
+  font-weight: 700;
+  color: #000000;
+}
+
+.task-block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.task-block__answer {
+  padding: 15px 150px;
+  color: #000000;
+  font-size: 20px;
+  text-decoration: none;
+  border: 0.5px solid #000000;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+.task-block__answer:hover {
+  background-color: #c8e9ff;
+}
+
+.right-answer {
+  background-color: #8cff6f;
+}
+
+.wrong-answer {
+  background-color: #ff6f6f;
+}
