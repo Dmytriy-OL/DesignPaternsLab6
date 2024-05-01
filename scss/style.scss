@@ -5,6 +5,9 @@
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 100vw;
     height: 100vh;
 }
@@ -68,7 +71,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px 0px;
+    padding: 20px 0px;
 }
 .chenge-language-mode-block {
 
