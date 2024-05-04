@@ -83,3 +83,7 @@ body {
 .chenge-language-mode-block__element:hover {
   background-color: #c8e9ff;
 }
+
+.hidden {
+  display: none;
+}
