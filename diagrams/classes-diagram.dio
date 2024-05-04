@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="3unTZeP1bngXd2f_5YPt" name="Page-1">
-        <mxGraphModel dx="3867" dy="1074" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="1906" dy="376" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -37,7 +37,7 @@
                 <mxCell id="11" value="- constructor(&#10;    tasktitleWord: HTMLElement,&#10;    asnwerOptions: HTMLElement[],&#10;    englishWords: string[],&#10;    ukraineWords: string[],&#10;): void&#10;+ generateWordsIndices(bellow:number): number[]&#10;+ generateTask(): number[]&#10;+ setMode(mode: Mode): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="8" vertex="1">
                     <mxGeometry y="118" width="310" height="142" as="geometry"/>
                 </mxCell>
-                <mxCell id="17" value="&lt;&lt;interface&gt;&gt;&#10;Mode" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=50;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
+                <mxCell id="17" value="&lt;&lt;interface&gt;&gt;&#10;IMode" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=50;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
                     <mxGeometry x="-300" y="60" width="300" height="260" as="geometry"/>
                 </mxCell>
                 <mxCell id="18" value="+ generateTask(&#10;    taskTitleWord: HTMLElement,&#10;    answerOptions: HTMLElement[],&#10;    englishWords: string[],&#10;    ukraineWords: string[],&#10;    wordsIndices: number[],&#10;): void&#10;+ checkTask(&#10;    taskTitleWord: HTMLElement,&#10;    answerOptions: HTMLElement[],&#10;    englishWords: string[],&#10;    ukraineWords: string[],&#10;    wordsIndices: number[],&#10;): boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="17">
