@@ -25,3 +25,5 @@ const screen = new ScreenMediator(
     recordBar,
     progressBar,
 );
+
+screen.generateTask();

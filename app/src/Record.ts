@@ -3,19 +3,24 @@ export class Record {
     private record: number = 0;
     private progress: number = 0;
 
-    private constructor(
-        private recordBar: HTMLElement, 
-        private progressBar: HTMLElement
-    ) {}
+    private constructor() {}
     
-    public static getInstance(recordBar: HTMLElement, progressBar: HTMLElement): Record {
-        const isRecord = localStorage.getItem('record');
-        if (!isRecord) {
-            const record = new Record(recordBar, progressBar);
-            localStorage.setItem('record', JSON.stringify(record));
-            return record;
+    public static getInstance(): Record {
+        const savedRecord = localStorage.getItem('record');
+        if (Record.instance) {
+            return Record.instance;
+        } else if (savedRecord) {
+            try {
+                const parsedRecord = JSON.parse(savedRecord);
+                Record.instance = new Record();
+                Record.instance.record = parsedRecord.record || 0;
+                Record.instance.progress = parsedRecord.progress || 0;
+            } catch (e) {
+                Record.instance = new Record();
+            }
+        } else {
+            Record.instance = new Record();
         }
-        Record.instance = JSON.parse('record');
         return Record.instance;
     }
 
@@ -30,6 +35,10 @@ export class Record {
 
     increaseProgress(): number {
         return ++this.progress;
+    }
+    
+    getProgress(): number {
+        return this.progress;
     }
 
     resetProgress(): void {
