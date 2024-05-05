@@ -27,3 +27,12 @@ const screen = new ScreenMediator(
 );
 
 screen.generateTask();
+
+languageModeButton.addEventListener('click', () => {
+    if (languageModeButton.textContent === 'English') {
+        languageModeButton.textContent = 'Ukraine';
+    } else {
+        languageModeButton.textContent = 'English';
+    }
+    screen.setMode();
+});

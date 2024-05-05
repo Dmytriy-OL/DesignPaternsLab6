@@ -34,4 +34,8 @@ export class TaskMaker {
         );
         return wordsIndices;
     };
+
+    setMode(mode: IMode): void {
+        this.mode = mode;
+    }
 }
