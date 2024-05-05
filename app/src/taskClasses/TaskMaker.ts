@@ -1,4 +1,9 @@
+import { EnglishMode } from "../modes/EnglishMode";
+import { IMode } from "../modes/IMode";
+
 export class TaskMaker {
+    private mode: IMode = new EnglishMode();
+
     constructor(
         private taskTitleWord: HTMLElement,
         private answerOptions: HTMLElement[],
@@ -16,4 +21,17 @@ export class TaskMaker {
         } while (wordsIndices.length !== 4);
         return wordsIndices;
     }
+
+    generateTask(): number[] {
+        const wordsIndices: number[] = this.generateWordsInices(this.englishWords.length);
+        this.mode.generateTask(
+            this.taskTitleWord,
+            this.answerOptions,
+            this.englishWords,
+            this.ukraineWords,
+            wordsIndices,
+            this.generateWordsInices(4),
+        );
+        return wordsIndices;
+    };
 }

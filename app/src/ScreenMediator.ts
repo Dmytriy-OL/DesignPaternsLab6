@@ -23,5 +23,6 @@ export class ScreenMediator {
 
     generateTask() {
         this.showRecordIndicators();
+        this.taskMaker.generateTask();
     }
 }
