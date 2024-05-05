@@ -8,12 +8,12 @@ export class TaskMaker {
 
     generateWordsInices(bellow: number): number[] {
         const wordsIndices: number[] = [];
-        for (let i = 0; i < 4; i++) {
+        do {
             const index = Math.round(Math.random() * bellow) % bellow;
             if (!wordsIndices.includes(index)) {
                 wordsIndices.push(index);
             }
-        }
+        } while (wordsIndices.length !== 4);
         return wordsIndices;
     }
 }

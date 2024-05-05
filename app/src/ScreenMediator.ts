@@ -1,7 +1,9 @@
+import { TaskMaker } from './taskClasses/TaskMaker';
 import { Record } from "./Record";
 
 export class ScreenMediator {
     private wordsIndices: number[] = [];
+    private taskMaker: TaskMaker = new TaskMaker(this.taskTitleWord, this.answerOptions, this.englishWords, this.ukraineWords);
     private record: Record = Record.getInstance();
 
     constructor(
@@ -21,6 +23,5 @@ export class ScreenMediator {
 
     generateTask() {
         this.showRecordIndicators();
-
     }
 }
