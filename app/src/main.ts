@@ -36,3 +36,9 @@ languageModeButton.addEventListener('click', () => {
     }
     screen.setMode();
 });
+
+taskAnswerButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        screen.checkTask(button.textContent ?? '');
+    });
+});

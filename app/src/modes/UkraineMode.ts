@@ -1,3 +1,4 @@
+import { TaskCheckerElements } from "../types/TaskCheckerElements";
 import { TaskGeneratorElements } from "../types/TaskGeneratorElements";
 import { IMode } from "./IMode";
 
@@ -9,7 +10,11 @@ export class UkraineMode implements IMode {
         }
     }
 
-    checkTask(tge: TaskGeneratorElements) {
-
+    checkTask(tce: TaskCheckerElements): boolean {
+        let rightWordIndex = tce.wordsIndices[0];
+        if (tce.answer === tce.englishWords[rightWordIndex]) {
+            return true;
+        }
+        return false;
     }
 }

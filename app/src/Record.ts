@@ -14,7 +14,6 @@ export class Record {
                 const parsedRecord = JSON.parse(savedRecord);
                 Record.instance = new Record();
                 Record.instance.record = parsedRecord.record || 0;
-                Record.instance.progress = parsedRecord.progress || 0;
             } catch (e) {
                 Record.instance = new Record();
             }
