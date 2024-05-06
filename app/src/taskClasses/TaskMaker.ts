@@ -24,14 +24,14 @@ export class TaskMaker {
 
     generateTask(): number[] {
         const wordsIndices: number[] = this.generateWordsInices(this.englishWords.length);
-        this.mode.generateTask(
-            this.taskTitleWord,
-            this.answerOptions,
-            this.englishWords,
-            this.ukraineWords,
+        this.mode.generateTask({
+            taskTitleWord: this.taskTitleWord,
+            answerOptions: this.answerOptions,
+            englishWords: this.englishWords,
+            ukraineWords: this.ukraineWords,
             wordsIndices,
-            this.generateWordsInices(4),
-        );
+            wordsOrder: this.generateWordsInices(4),
+        });
         return wordsIndices;
     };
 

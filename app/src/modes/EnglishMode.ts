@@ -1,28 +1,15 @@
+import { TaskGeneratorElements } from './../types/TaskGeneratorElements';
 import { IMode } from "./IMode";
 
 export class EnglishMode implements IMode {
-    generateTask(
-        taskTitleWord: HTMLElement,
-        answerOptions: HTMLElement[],
-        englishWords: string[],
-        ukraineWords: string[],
-        wordsIndices: number[],
-        wordsOrder: number[],
-    ) {
-        taskTitleWord.textContent = englishWords[wordsIndices[0]];
+    generateTask(tge: TaskGeneratorElements) {
+        tge.taskTitleWord.textContent = tge.englishWords[tge.wordsIndices[0]];
         for (let index = 0; index < 4; index++) {
-            answerOptions[wordsOrder[index]].textContent = ukraineWords[wordsIndices[index]];            
+            tge.answerOptions[tge.wordsOrder[index]].textContent = tge.ukraineWords[tge.wordsIndices[index]];            
         }
     }
 
-    checkTask(
-        taskTitleWord: HTMLElement,
-        answerOptions: HTMLElement[],
-        englishWords: string[],
-        ukraineWords: string[],
-        wordsIndices: number[],
-        wordsOrder: number[],
-    ) {
+    checkTask(tge: TaskGeneratorElements) {
 
     }
 }

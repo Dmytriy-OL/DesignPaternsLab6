@@ -1,18 +1,6 @@
+import { TaskGeneratorElements } from "../types/TaskGeneratorElements";
+
 export interface IMode {
-    generateTask(
-        taskTitleWord: HTMLElement,
-        answerOptions: HTMLElement[],
-        englishWords: string[],
-        ukraineWords: string[],
-        wordsIndices: number[],
-        wordsOrder: number[],
-    ): void;
-        checkTask(
-        taskTitleWord: HTMLElement,
-        answerOptions: HTMLElement[],
-        englishWords: string[],
-        ukraineWords: string[],
-        wordsIndices: number[],
-        wordsOrder: number[],
-    ): void;
+    generateTask(tge: TaskGeneratorElements): void;
+    checkTask(tge: TaskGeneratorElements): void;
 }
