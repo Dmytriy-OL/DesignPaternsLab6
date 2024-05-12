@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learn English Words</title>
     <link rel="stylesheet" href="css/style.css">
+   
 </head>
 <body>
     <header class="header">
@@ -16,10 +17,7 @@
     <main class="main">
         <div class="main__title">Translate word "<span></span>"</div>
         <div class="task-block">
-            <a class="task-block__answer" href="#"></a>
-            <a class="task-block__answer" href="#"></a>
-            <a class="task-block__answer" href="#"></a>
-            <a class="task-block__answer" href="#"></a>
+       
         </div>
     </main>
     <footer class="footer">
@@ -28,27 +26,55 @@
         </div>
     </footer>
     <div class="words hidden">
-        <div class="word">
-            <div class="english-word">apple</div>
-            <div class="ukraine-word">яблуко</div>
-        </div>
-        <div class="word">
-            <div class="english-word">banana</div>
-            <div class="ukraine-word">банан</div>
-        </div>
-        <div class="word">
-            <div class="english-word">orange</div>
-            <div class="ukraine-word">апельсин</div>
-        </div>
-        <div class="word">
-            <div class="english-word">pineapple</div>
-            <div class="ukraine-word">ананас</div>
-        </div>
-        <div class="word">
-            <div class="english-word">watermelon</div>
-            <div class="ukraine-word">кавун</div>
-        </div>
+     
     </div>
+    <script>
+
+        const taskBlock = document.querySelector('.task-block');
+        
+        
+        const numberOfLinks = 4;
+        
+        for (let i = 0; i < numberOfLinks; i++) {
+            const link = document.createElement('a');
+            link.classList.add('task-block__answer');
+            link.setAttribute('href', '#');
+            taskBlock.appendChild(link);
+        }
+        
+        
+        const wordsContainer = document.querySelector('.words');
+        
+        
+        const words = [
+            { english: 'apple', ukrainian: 'яблуко' },
+            { english: 'banana', ukrainian: 'банан' },
+            { english: 'orange', ukrainian: 'апельсин' },
+            { english: 'pineapple', ukrainian: 'ананас' },
+            { english: 'watermelon', ukrainian: 'кавун' }
+        ];
+        
+        
+        words.forEach(word => {
+            const wordDiv = document.createElement('div');
+            wordDiv.classList.add('word');
+        
+            const englishWordDiv = document.createElement('div');
+            englishWordDiv.classList.add('english-word');
+            englishWordDiv.textContent = word.english;
+        
+            const ukrainianWordDiv = document.createElement('div');
+            ukrainianWordDiv.classList.add('ukraine-word');
+            ukrainianWordDiv.textContent = word.ukrainian;
+        
+            wordDiv.appendChild(englishWordDiv);
+            wordDiv.appendChild(ukrainianWordDiv);
+        
+            wordsContainer.appendChild(wordDiv);
+        });
+        
+        
+            </script>
     <script type="module" src="app/dist/bundle.js"></script>
 </body>
 </html>
