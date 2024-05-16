@@ -9,6 +9,7 @@ export class ScreenMediator {
     private taskChecker: TaskChecker = new TaskChecker(this.taskTitleWord, this.answerOptions, this.englishWords, this.ukraineWords);
     private mode: Mode = new Mode(this.languageModeButton);
     private record: Record = Record.getInstance();
+    private usedWords: number[] = [];
 
     constructor(
         private taskTitleWord: HTMLElement,
@@ -37,7 +38,10 @@ export class ScreenMediator {
         this.showRecordIndicators();
         this.taskMaker.setMode(this.mode.mode);
         this.taskChecker.setMode(this.mode.mode);
-        this.wordsIndices = this.taskMaker.generateTask();
+        if (this.usedWords.length === this.englishWords.length) {
+            this.usedWords.splice(0, this.usedWords.length);
+        }
+        this.wordsIndices = this.taskMaker.generateTask(this.usedWords);
     }
     
     toggleClass(clasName: string): void {
@@ -52,10 +56,12 @@ export class ScreenMediator {
             this.toggleClass(className);
         }, 500);
     }
+
     checkTask(answer: string): void {
         if (this.taskChecker.checkTask(this.wordsIndices, answer)) {
             this.showAnswer('right-answer');
             this.record.increaseProgress();
+            this.usedWords.push(this.wordsIndices[0]);
             setTimeout(this.generateTask.bind(this), 500);
             return;
         }
