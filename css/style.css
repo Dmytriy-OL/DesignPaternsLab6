@@ -37,11 +37,19 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 80px;
+  gap: 60px;
   padding: 70px 0px;
+}
+.main__titles {
+  text-align: center;
 }
 .main__title {
   font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--main-color);
+}
+.main__hint-title {
+  font-size: 14px;
   font-weight: 700;
   color: var(--main-color);
 }
@@ -82,7 +90,7 @@ body {
   padding: 20px 0px;
 }
 
-.chenge-language-mode-block__element {
+.chenge-language-mode-block__element, .chenge-language-mode-block .get-hint-button {
   padding: 10px;
   color: var(--main-color);
   font-size: 20px;
@@ -90,7 +98,7 @@ body {
   border-radius: 5px;
   transition: all 0.3s;
 }
-.chenge-language-mode-block__element:hover {
+.chenge-language-mode-block__element:hover, .chenge-language-mode-block .get-hint-button:hover {
   background-color: var(--highlight-color);
 }
 

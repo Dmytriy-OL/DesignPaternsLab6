@@ -1,14 +1,16 @@
-import { ScreenMediatorDirector } from "./ScreeenMediatorDirector";
-import { ScreenMediator } from "./ScreenMediator";
-import { ScreenMediatorBuilder } from "./ScreenMediatorBuilder";
+import { ScreenMediatorDirector } from "./screenMediator/ScreeenMediatorDirector";
+import { ScreenMediator } from "./screenMediator/ScreenMediator";
+import { ScreenMediatorBuilder } from "./screenMediator/ScreenMediatorBuilder";
 
 export const recordBar = document.querySelector('.record-indicator span') as HTMLElement;
 export const progressBar = document.querySelector('.progress-indicator span') as HTMLElement;
 
 export const mainTitleWord = document.querySelector('.main__title span') as HTMLElement;
+export const mainHintTitle = document.querySelector('.main__hint-ttile') as HTMLElement;
 export const taskAnswerButtonsNodeList = document.querySelectorAll('.task-block__answer');
 export const taskAnswerButtons: HTMLElement[] = Array.from(taskAnswerButtonsNodeList) as HTMLElement[];
 export const languageModeButton = document.querySelector('.chenge-language-mode-block__element') as HTMLElement;
+export const getHintButton = document.querySelector('.get-hint-button') as HTMLElement;
 
 export let englishWordsDivs = document.querySelectorAll('.english-word'), englishWords: string[] = [];
 export let ukraineWordsDivs = document.querySelectorAll('.ukraine-word'), ukraineWords: string[] = [];
@@ -35,4 +37,8 @@ taskAnswerButtons.forEach(button => {
     button.addEventListener('click', () => {
         screen.checkTask(button.textContent ?? '');
     });
+});
+
+getHintButton.addEventListener('click', () => {
+    screen.getHint();
 });

@@ -17,4 +17,8 @@ export class UkraineMode implements IMode {
         }
         return false;
     }
+
+    giveHint(hintTitle: HTMLElement, wordsIndices: number[], englishWords: string[], ukraineWords: string[]): void {
+        hintTitle.textContent = `Word starts with an ${englishWords[wordsIndices[0]][0]}`;
+    }
 }

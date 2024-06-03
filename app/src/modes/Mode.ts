@@ -17,4 +17,8 @@ export class Mode {
             this.mode = new UkraineMode();
         }
     }
+
+    giveHint(hintTitle: HTMLElement, wordsIndices: number[], englishWords: string[], ukraineWords: string[]): void {
+        this.mode.giveHint(hintTitle, wordsIndices, englishWords, ukraineWords);
+    }
 }
